@@ -41,12 +41,10 @@ ContextSeed-generated data inside a user's target repository belongs under `.con
 
 ### `.agents/skills/`
 
-- Reusable skills live under `.agents/skills/<skill-name>/`.
-- Each skill should use `SKILL.md` as its entry point.
+- Development skills live under `.agents/skills/<skill-name>/`.
+- Each development skill should use `SKILL.md` as its entry point.
 - If the user names a skill or the task clearly matches one, read that `SKILL.md` before acting.
 - Follow referenced files only when needed.
-- Keep the ContextSeed product skill self-contained: a user who installs `.agents/skills/contextseed/` should receive everything required for the supported skill workflow.
-- Repository-only tooling must not become an undeclared runtime requirement for the installed skill.
 
 Before editing a nested area, check whether it contains another `AGENTS.md`. If one exists, follow it in addition to this root file.
 
@@ -55,8 +53,8 @@ Before editing a nested area, check whether it contains another `AGENTS.md`. If 
 The expected top-level responsibilities are:
 
 ```text
-.agents/skills/contextseed/  → Distributable ContextSeed Agent Skill and its runtime scripts/resources
-.agents/skills/              → Other reusable development skills, such as commit/review helpers
+skills/contextseed/          → Distributable ContextSeed Agent Skill and its runtime scripts/resources
+.agents/skills/              → Development-only skills, such as commit/review helpers
 .context/                    → Lazy-loaded project decisions, plans, and development context
 benchmarks/                  → Reproducible ContextSeed-vs-baseline experiments
 tests/                       → Unit and integration coverage for skill behavior and indexing
